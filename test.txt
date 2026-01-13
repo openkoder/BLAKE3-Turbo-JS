@@ -1,0 +1,436 @@
+📊 Подготовка данных: псевдослучайный генератор (Math.random)
+🔐 Подготовка данных: криптографический генератор (crypto)
+
+🏁 Запуск тестов [pseudo]...
+
+
+🏁 Запуск тестов [crypto]...
+
+[0m[38;5;245m    CPU | Intel(R) Core(TM) i3-5005U CPU @ 2.00GHz[0m
+[0m[38;5;245mRuntime | Deno 2.6.2 (x86_64-unknown-linux-gnu)[0m
+
+[0m[38;5;245mfile:///mnt/1disk/_mia_teksto/kodo/blake3/benchmark.ts[0m
+
+| benchmark                                                       | time/iter (avg) |        iter/s |      (min … max)      |      p75 |      p99 |     p995 |
+| --------------------------------------------------------------- | --------------- | ------------- | --------------------- | -------- | -------- | -------- |
+
+[0m[38;5;245mgroup[0m [0m[32m96B (pseudo)[0m
+| SHA-256 [pseudo] 96B                                            | [0m[33m        13.9 µs[0m |        72,110 | ([0m[36m  8.8 µs[0m … [0m[35m  2.8 ms[0m) |[0m[35m  16.1 µs |  29.6 µs |  34.1 µs |[0m
+| BLAKE3-Rust [pseudo] 96B                                        | [0m[33m         2.8 µs[0m |       356,400 | ([0m[36m  1.9 µs[0m … [0m[35m 34.5 ms[0m) |[0m[35m   2.5 µs |   8.4 µs |  13.1 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 96B              | [0m[33m        11.3 µs[0m |        88,630 | ([0m[36m  7.9 µs[0m … [0m[35m  1.0 ms[0m) |[0m[35m  10.3 µs |  29.5 µs |  40.1 µs |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 96B      | [0m[33m         2.1 µs[0m |       475,300 | ([0m[36m  1.5 µs[0m … [0m[35m967.1 µs[0m) |[0m[35m   2.3 µs |   4.3 µs |   4.5 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 96B         | [0m[33m         4.7 µs[0m |       211,000 | ([0m[36m  3.0 µs[0m … [0m[35m 18.7 ms[0m) |[0m[35m   4.7 µs |  10.9 µs |  14.4 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 96B             | [0m[33m         2.4 µs[0m |       419,100 | ([0m[36m  1.8 µs[0m … [0m[35m  4.5 ms[0m) |[0m[35m   2.5 µs |   6.5 µs |   7.5 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 96B             | [0m[33m        13.4 µs[0m |        74,530 | ([0m[36m  9.3 µs[0m … [0m[35m 19.6 ms[0m) |[0m[35m  12.7 µs |  31.0 µs |  39.1 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 96B                   | [0m[33m         2.2 µs[0m |       458,500 | ([0m[36m  1.5 µs[0m … [0m[35m  1.5 ms[0m) |[0m[35m   2.3 µs |   4.9 µs |   6.2 µs |[0m
+| BLAKE3-JS-v5 [pseudo] 96B                                       | [0m[33m         5.3 µs[0m |       189,500 | ([0m[36m  2.6 µs[0m … [0m[35m 16.4 ms[0m) |[0m[35m   7.1 µs |  11.4 µs |  13.2 µs |[0m
+| BLAKE3-JS-v6 [pseudo] 96B                                       | [0m[33m         5.5 µs[0m |       180,300 | ([0m[36m  2.3 µs[0m … [0m[35m 37.3 ms[0m) |[0m[35m   6.7 µs |  16.7 µs |  20.2 µs |[0m
+| BLAKE3-JS-v7 [pseudo] 96B                                       | [0m[33m         1.2 µs[0m |       813,000 | ([0m[36m  1.1 µs[0m … [0m[35m320.0 µs[0m) |[0m[35m   1.2 µs |   3.0 µs |   5.5 µs |[0m
+| BLAKE3-JS-v8 [pseudo] 96B                                       | [0m[33m         1.1 µs[0m |       951,800 | ([0m[36m  1.0 µs[0m … [0m[35m  2.1 µs[0m) |[0m[35m   1.0 µs |   2.1 µs |   2.1 µs |[0m
+| BLAKE3-JS-v9 [pseudo] 96B                                       | [0m[33m         1.3 µs[0m |       751,300 | ([0m[36m  1.1 µs[0m … [0m[35m342.5 µs[0m) |[0m[35m   1.2 µs |   2.8 µs |   5.7 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-v8 [pseudo] 96B[0m
+[0m[32m     1.17[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [pseudo] 96B[0m
+[0m[32m     1.27[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [pseudo] 96B[0m
+[0m[32m     2.00[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 96B[0m
+[0m[32m     2.08[0mx faster than [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 96B[0m
+[0m[32m     2.27[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 96B[0m
+[0m[32m     2.67[0mx faster than [0m[1m[36mBLAKE3-Rust [pseudo] 96B[0m
+[0m[32m     4.51[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 96B[0m
+[0m[32m     5.02[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [pseudo] 96B[0m
+[0m[32m     5.28[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [pseudo] 96B[0m
+[0m[32m    10.74[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 96B[0m
+[0m[32m    12.77[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 96B[0m
+[0m[32m    13.20[0mx faster than [0m[1m[36mSHA-256 [pseudo] 96B[0m
+
+[0m[38;5;245mgroup[0m [0m[32m512B (pseudo)[0m
+| SHA-256 [pseudo] 512B                                           | [0m[33m        30.1 µs[0m |        33,250 | ([0m[36m 24.4 µs[0m … [0m[35m  9.3 ms[0m) |[0m[35m  28.8 µs |  53.8 µs |  62.1 µs |[0m
+| BLAKE3-Rust [pseudo] 512B                                       | [0m[33m         3.6 µs[0m |       279,500 | ([0m[36m  3.3 µs[0m … [0m[35m  5.0 µs[0m) |[0m[35m   3.5 µs |   5.0 µs |   5.0 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 512B             | [0m[33m        26.4 µs[0m |        37,950 | ([0m[36m 20.9 µs[0m … [0m[35m 17.9 ms[0m) |[0m[35m  24.2 µs |  47.0 µs |  49.3 µs |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 512B     | [0m[33m         3.7 µs[0m |       273,800 | ([0m[36m  3.4 µs[0m … [0m[35m  4.6 µs[0m) |[0m[35m   3.7 µs |   4.6 µs |   4.6 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 512B        | [0m[33m         5.3 µs[0m |       187,700 | ([0m[36m  4.9 µs[0m … [0m[35m  6.5 µs[0m) |[0m[35m   5.5 µs |   6.5 µs |   6.5 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 512B            | [0m[33m         4.2 µs[0m |       236,400 | ([0m[36m  3.3 µs[0m … [0m[35m 13.4 ms[0m) |[0m[35m   4.1 µs |   8.0 µs |   8.7 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 512B            | [0m[33m        43.9 µs[0m |        22,750 | ([0m[36m 35.0 µs[0m … [0m[35m  4.6 ms[0m) |[0m[35m  41.3 µs |  74.3 µs |  84.9 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 512B                  | [0m[33m         3.8 µs[0m |       264,800 | ([0m[36m  3.3 µs[0m … [0m[35m  1.6 ms[0m) |[0m[35m   3.8 µs |   7.9 µs |   8.3 µs |[0m
+| BLAKE3-JS-v5 [pseudo] 512B                                      | [0m[33m         7.3 µs[0m |       137,200 | ([0m[36m  5.9 µs[0m … [0m[35m  2.3 ms[0m) |[0m[35m   6.3 µs |  19.4 µs |  24.6 µs |[0m
+| BLAKE3-JS-v6 [pseudo] 512B                                      | [0m[33m         6.3 µs[0m |       159,500 | ([0m[36m  4.8 µs[0m … [0m[35m 25.4 ms[0m) |[0m[35m   5.4 µs |  17.3 µs |  18.8 µs |[0m
+| BLAKE3-JS-v7 [pseudo] 512B                                      | [0m[33m         3.7 µs[0m |       268,400 | ([0m[36m  3.5 µs[0m … [0m[35m  5.8 µs[0m) |[0m[35m   3.6 µs |   5.8 µs |   5.8 µs |[0m
+| BLAKE3-JS-v8 [pseudo] 512B                                      | [0m[33m         3.1 µs[0m |       327,300 | ([0m[36m  3.0 µs[0m … [0m[35m  3.4 µs[0m) |[0m[35m   3.1 µs |   3.4 µs |   3.4 µs |[0m
+| BLAKE3-JS-v9 [pseudo] 512B                                      | [0m[33m         3.1 µs[0m |       325,900 | ([0m[36m  3.0 µs[0m … [0m[35m  3.5 µs[0m) |[0m[35m   3.1 µs |   3.5 µs |   3.5 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-v8 [pseudo] 512B[0m
+[0m[32m     1.00[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [pseudo] 512B[0m
+[0m[32m     1.17[0mx faster than [0m[1m[36mBLAKE3-Rust [pseudo] 512B[0m
+[0m[32m     1.20[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 512B[0m
+[0m[32m     1.22[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [pseudo] 512B[0m
+[0m[32m     1.24[0mx faster than [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 512B[0m
+[0m[32m     1.39[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 512B[0m
+[0m[32m     1.74[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 512B[0m
+[0m[32m     2.05[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [pseudo] 512B[0m
+[0m[32m     2.38[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [pseudo] 512B[0m
+[0m[32m     8.63[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 512B[0m
+[0m[32m     9.84[0mx faster than [0m[1m[36mSHA-256 [pseudo] 512B[0m
+[0m[32m    14.38[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 512B[0m
+
+[0m[38;5;245mgroup[0m [0m[32m1KiB (pseudo)[0m
+| SHA-256 [pseudo] 1KiB                                           | [0m[33m        48.5 µs[0m |        20,630 | ([0m[36m 42.7 µs[0m … [0m[35m410.4 µs[0m) |[0m[35m  44.8 µs |  93.2 µs | 101.8 µs |[0m
+| BLAKE3-Rust [pseudo] 1KiB                                       | [0m[33m         5.1 µs[0m |       196,400 | ([0m[36m  4.8 µs[0m … [0m[35m  6.0 µs[0m) |[0m[35m   5.2 µs |   6.0 µs |   6.0 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 1KiB             | [0m[33m        47.4 µs[0m |        21,090 | ([0m[36m 38.1 µs[0m … [0m[35m 15.6 ms[0m) |[0m[35m  42.2 µs |  85.6 µs |  90.6 µs |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 1KiB     | [0m[33m         6.6 µs[0m |       150,900 | ([0m[36m  6.0 µs[0m … [0m[35m  9.6 µs[0m) |[0m[35m   6.4 µs |   9.6 µs |   9.6 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 1KiB        | [0m[33m         7.7 µs[0m |       130,200 | ([0m[36m  7.1 µs[0m … [0m[35m  8.8 µs[0m) |[0m[35m   7.8 µs |   8.8 µs |   8.8 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 1KiB            | [0m[33m         6.3 µs[0m |       158,200 | ([0m[36m  6.0 µs[0m … [0m[35m  7.9 µs[0m) |[0m[35m   6.3 µs |   7.9 µs |   7.9 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 1KiB            | [0m[33m         5.2 µs[0m |       192,300 | ([0m[36m  4.0 µs[0m … [0m[35m 27.7 ms[0m) |[0m[35m   5.0 µs |   8.4 µs |   9.8 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 1KiB                  | [0m[33m         6.3 µs[0m |       159,200 | ([0m[36m  6.1 µs[0m … [0m[35m  6.7 µs[0m) |[0m[35m   6.3 µs |   6.7 µs |   6.7 µs |[0m
+| BLAKE3-JS-v5 [pseudo] 1KiB                                      | [0m[33m        12.2 µs[0m |        82,070 | ([0m[36m 10.1 µs[0m … [0m[35m  2.0 ms[0m) |[0m[35m  11.6 µs |  27.6 µs |  34.2 µs |[0m
+| BLAKE3-JS-v6 [pseudo] 1KiB                                      | [0m[33m         9.9 µs[0m |       101,300 | ([0m[36m  8.2 µs[0m … [0m[35m 36.7 ms[0m) |[0m[35m   8.7 µs |  17.8 µs |  18.7 µs |[0m
+| BLAKE3-JS-v7 [pseudo] 1KiB                                      | [0m[33m         7.1 µs[0m |       140,700 | ([0m[36m  6.7 µs[0m … [0m[35m311.9 µs[0m) |[0m[35m   6.8 µs |  14.5 µs |  16.0 µs |[0m
+| BLAKE3-JS-v8 [pseudo] 1KiB                                      | [0m[33m         6.5 µs[0m |       152,700 | ([0m[36m  5.6 µs[0m … [0m[35m282.3 µs[0m) |[0m[35m   5.8 µs |  12.6 µs |  12.8 µs |[0m
+| BLAKE3-JS-v9 [pseudo] 1KiB                                      | [0m[33m         5.7 µs[0m |       175,300 | ([0m[36m  5.6 µs[0m … [0m[35m  6.4 µs[0m) |[0m[35m   5.7 µs |   6.4 µs |   6.4 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-Rust [pseudo] 1KiB[0m
+[0m[32m     1.02[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 1KiB[0m
+[0m[32m     1.12[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [pseudo] 1KiB[0m
+[0m[32m     1.23[0mx faster than [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 1KiB[0m
+[0m[32m     1.24[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 1KiB[0m
+[0m[32m     1.29[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [pseudo] 1KiB[0m
+[0m[32m     1.30[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 1KiB[0m
+[0m[32m     1.40[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [pseudo] 1KiB[0m
+[0m[32m     1.51[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 1KiB[0m
+[0m[32m     1.94[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [pseudo] 1KiB[0m
+[0m[32m     2.39[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [pseudo] 1KiB[0m
+[0m[32m     9.31[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 1KiB[0m
+[0m[32m     9.52[0mx faster than [0m[1m[36mSHA-256 [pseudo] 1KiB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m32KiB (pseudo)[0m
+| SHA-256 [pseudo] 32KiB                                          | [0m[33m         1.3 ms[0m |         785.6 | ([0m[36m  1.2 ms[0m … [0m[35m  2.6 ms[0m) |[0m[35m   1.2 ms |   2.5 ms |   2.6 ms |[0m
+| BLAKE3-Rust [pseudo] 32KiB                                      | [0m[33m       116.4 µs[0m |         8,593 | ([0m[36m112.0 µs[0m … [0m[35m315.9 µs[0m) |[0m[35m 112.8 µs | 215.7 µs | 224.5 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 32KiB            | [0m[33m         1.7 ms[0m |         585.3 | ([0m[36m  1.5 ms[0m … [0m[35m 14.7 ms[0m) |[0m[35m   1.6 ms |   2.9 ms |   3.4 ms |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 32KiB    | [0m[33m        98.4 µs[0m |        10,160 | ([0m[36m 91.7 µs[0m … [0m[35m  1.6 ms[0m) |[0m[35m  92.3 µs | 191.9 µs | 265.1 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 32KiB       | [0m[33m       163.8 µs[0m |         6,106 | ([0m[36m157.3 µs[0m … [0m[35m371.9 µs[0m) |[0m[35m 158.3 µs | 285.0 µs | 334.2 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 32KiB           | [0m[33m       183.5 µs[0m |         5,448 | ([0m[36m174.2 µs[0m … [0m[35m390.9 µs[0m) |[0m[35m 175.5 µs | 364.3 µs | 380.0 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 32KiB           | [0m[33m       140.0 µs[0m |         7,142 | ([0m[36m119.8 µs[0m … [0m[35m  5.7 ms[0m) |[0m[35m 131.6 µs | 299.8 µs | 339.8 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 32KiB                 | [0m[33m        87.4 µs[0m |        11,440 | ([0m[36m 83.2 µs[0m … [0m[35m  1.1 ms[0m) |[0m[35m  83.8 µs | 141.8 µs | 156.4 µs |[0m
+| BLAKE3-JS-v5 [pseudo] 32KiB                                     | [0m[33m       305.8 µs[0m |         3,270 | ([0m[36m285.8 µs[0m … [0m[35m  5.6 ms[0m) |[0m[35m 315.7 µs | 459.7 µs | 539.0 µs |[0m
+| BLAKE3-JS-v6 [pseudo] 32KiB                                     | [0m[33m       230.3 µs[0m |         4,342 | ([0m[36m219.3 µs[0m … [0m[35m429.9 µs[0m) |[0m[35m 230.7 µs | 335.9 µs | 362.1 µs |[0m
+| BLAKE3-JS-v7 [pseudo] 32KiB                                     | [0m[33m       228.2 µs[0m |         4,383 | ([0m[36m218.0 µs[0m … [0m[35m572.3 µs[0m) |[0m[35m 220.0 µs | 361.1 µs | 410.0 µs |[0m
+| BLAKE3-JS-v8 [pseudo] 32KiB                                     | [0m[33m       188.5 µs[0m |         5,306 | ([0m[36m176.7 µs[0m … [0m[35m477.7 µs[0m) |[0m[35m 177.8 µs | 378.8 µs | 384.1 µs |[0m
+| BLAKE3-JS-v9 [pseudo] 32KiB                                     | [0m[33m       184.9 µs[0m |         5,410 | ([0m[36m176.0 µs[0m … [0m[35m390.7 µs[0m) |[0m[35m 178.3 µs | 356.1 µs | 379.7 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 32KiB[0m
+[0m[32m     1.12[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 32KiB[0m
+[0m[32m     1.33[0mx faster than [0m[1m[36mBLAKE3-Rust [pseudo] 32KiB[0m
+[0m[32m     1.60[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 32KiB[0m
+[0m[32m     1.87[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 32KiB[0m
+[0m[32m     2.10[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 32KiB[0m
+[0m[32m     2.11[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [pseudo] 32KiB[0m
+[0m[32m     2.16[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [pseudo] 32KiB[0m
+[0m[32m     2.61[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [pseudo] 32KiB[0m
+[0m[32m     2.63[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [pseudo] 32KiB[0m
+[0m[32m     3.50[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [pseudo] 32KiB[0m
+[0m[32m    14.56[0mx faster than [0m[1m[36mSHA-256 [pseudo] 32KiB[0m
+[0m[32m    19.54[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 32KiB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m64KiB (pseudo)[0m
+| SHA-256 [pseudo] 64KiB                                          | [0m[33m         2.4 ms[0m |         413.4 | ([0m[36m  2.3 ms[0m … [0m[35m  4.5 ms[0m) |[0m[35m   2.4 ms |   3.2 ms |   3.4 ms |[0m
+| BLAKE3-Rust [pseudo] 64KiB                                      | [0m[33m       230.6 µs[0m |         4,337 | ([0m[36m223.2 µs[0m … [0m[35m443.0 µs[0m) |[0m[35m 225.7 µs | 338.4 µs | 385.5 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 64KiB            | [0m[33m         3.2 ms[0m |         307.8 | ([0m[36m  3.0 ms[0m … [0m[35m 14.8 ms[0m) |[0m[35m   3.2 ms |   5.2 ms |  14.8 ms |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 64KiB    | [0m[33m       173.6 µs[0m |         5,761 | ([0m[36m170.9 µs[0m … [0m[35m292.3 µs[0m) |[0m[35m 172.2 µs | 206.7 µs | 217.6 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 64KiB       | [0m[33m       323.1 µs[0m |         3,095 | ([0m[36m313.0 µs[0m … [0m[35m706.7 µs[0m) |[0m[35m 314.4 µs | 455.1 µs | 515.6 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 64KiB           | [0m[33m       351.5 µs[0m |         2,845 | ([0m[36m347.8 µs[0m … [0m[35m566.5 µs[0m) |[0m[35m 349.2 µs | 395.6 µs | 421.4 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 64KiB           | [0m[33m       259.8 µs[0m |         3,849 | ([0m[36m239.6 µs[0m … [0m[35m746.8 µs[0m) |[0m[35m 248.8 µs | 434.2 µs | 445.0 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 64KiB                 | [0m[33m       155.6 µs[0m |         6,426 | ([0m[36m152.3 µs[0m … [0m[35m281.9 µs[0m) |[0m[35m 153.3 µs | 251.8 µs | 253.4 µs |[0m
+| BLAKE3-JS-v5 [pseudo] 64KiB                                     | [0m[33m       591.8 µs[0m |         1,690 | ([0m[36m570.2 µs[0m … [0m[35m  1.3 ms[0m) |[0m[35m 584.0 µs | 918.2 µs |   1.3 ms |[0m
+| BLAKE3-JS-v6 [pseudo] 64KiB                                     | [0m[33m       457.1 µs[0m |         2,188 | ([0m[36m437.6 µs[0m … [0m[35m941.6 µs[0m) |[0m[35m 447.7 µs | 863.8 µs | 927.5 µs |[0m
+| BLAKE3-JS-v7 [pseudo] 64KiB                                     | [0m[33m       442.7 µs[0m |         2,259 | ([0m[36m436.2 µs[0m … [0m[35m948.4 µs[0m) |[0m[35m 437.6 µs | 547.6 µs | 715.0 µs |[0m
+| BLAKE3-JS-v8 [pseudo] 64KiB                                     | [0m[33m       480.6 µs[0m |         2,081 | ([0m[36m353.4 µs[0m … [0m[35m786.3 µs[0m) |[0m[35m 708.7 µs | 754.9 µs | 768.6 µs |[0m
+| BLAKE3-JS-v9 [pseudo] 64KiB                                     | [0m[33m       358.9 µs[0m |         2,787 | ([0m[36m354.4 µs[0m … [0m[35m616.2 µs[0m) |[0m[35m 357.2 µs | 434.1 µs | 467.1 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 64KiB[0m
+[0m[32m     1.11[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 64KiB[0m
+[0m[32m     1.48[0mx faster than [0m[1m[36mBLAKE3-Rust [pseudo] 64KiB[0m
+[0m[32m     1.67[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 64KiB[0m
+[0m[32m     2.08[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 64KiB[0m
+[0m[32m     2.26[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 64KiB[0m
+[0m[32m     2.31[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [pseudo] 64KiB[0m
+[0m[32m     2.85[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [pseudo] 64KiB[0m
+[0m[32m     2.94[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [pseudo] 64KiB[0m
+[0m[32m     3.09[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [pseudo] 64KiB[0m
+[0m[32m     3.80[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [pseudo] 64KiB[0m
+[0m[32m    15.54[0mx faster than [0m[1m[36mSHA-256 [pseudo] 64KiB[0m
+[0m[32m    20.87[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 64KiB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m256KiB (pseudo)[0m
+| SHA-256 [pseudo] 256KiB                                         | [0m[33m         9.8 ms[0m |         101.7 | ([0m[36m  9.3 ms[0m … [0m[35m 13.3 ms[0m) |[0m[35m   9.6 ms |  13.3 ms |  13.3 ms |[0m
+| BLAKE3-Rust [pseudo] 256KiB                                     | [0m[33m       930.8 µs[0m |         1,074 | ([0m[36m891.6 µs[0m … [0m[35m  1.8 ms[0m) |[0m[35m 913.4 µs |   1.6 ms |   1.7 ms |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 256KiB           | [0m[33m        12.4 ms[0m |          80.5 | ([0m[36m 11.9 ms[0m … [0m[35m 16.0 ms[0m) |[0m[35m  12.5 ms |  16.0 ms |  16.0 ms |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 256KiB   | [0m[33m       678.1 µs[0m |         1,475 | ([0m[36m658.9 µs[0m … [0m[35m  1.2 ms[0m) |[0m[35m 668.9 µs |   1.1 ms |   1.2 ms |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 256KiB      | [0m[33m         1.3 ms[0m |         750.4 | ([0m[36m  1.2 ms[0m … [0m[35m  2.7 ms[0m) |[0m[35m   1.3 ms |   2.5 ms |   2.5 ms |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 256KiB          | [0m[33m         1.5 ms[0m |         674.3 | ([0m[36m  1.4 ms[0m … [0m[35m  3.1 ms[0m) |[0m[35m   1.4 ms |   2.9 ms |   2.9 ms |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 256KiB          | [0m[33m         1.1 ms[0m |         908.9 | ([0m[36m965.2 µs[0m … [0m[35m  2.6 ms[0m) |[0m[35m   1.0 ms |   1.9 ms |   2.0 ms |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 256KiB                | [0m[33m       579.9 µs[0m |         1,725 | ([0m[36m569.9 µs[0m … [0m[35m  1.0 ms[0m) |[0m[35m 575.8 µs | 751.4 µs | 921.7 µs |[0m
+| BLAKE3-JS-v5 [pseudo] 256KiB                                    | [0m[33m         2.3 ms[0m |         427.5 | ([0m[36m  2.3 ms[0m … [0m[35m  4.5 ms[0m) |[0m[35m   2.3 ms |   3.5 ms |   4.2 ms |[0m
+| BLAKE3-JS-v6 [pseudo] 256KiB                                    | [0m[33m         1.9 ms[0m |         518.4 | ([0m[36m  1.7 ms[0m … [0m[35m  3.7 ms[0m) |[0m[35m   1.9 ms |   3.6 ms |   3.7 ms |[0m
+| BLAKE3-JS-v7 [pseudo] 256KiB                                    | [0m[33m         1.8 ms[0m |         544.7 | ([0m[36m  1.7 ms[0m … [0m[35m  3.7 ms[0m) |[0m[35m   1.8 ms |   3.4 ms |   3.5 ms |[0m
+| BLAKE3-JS-v8 [pseudo] 256KiB                                    | [0m[33m         1.4 ms[0m |         692.7 | ([0m[36m  1.4 ms[0m … [0m[35m  3.0 ms[0m) |[0m[35m   1.4 ms |   2.1 ms |   2.3 ms |[0m
+| BLAKE3-JS-v9 [pseudo] 256KiB                                    | [0m[33m         1.4 ms[0m |         693.0 | ([0m[36m  1.4 ms[0m … [0m[35m  3.1 ms[0m) |[0m[35m   1.4 ms |   2.2 ms |   3.0 ms |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 256KiB[0m
+[0m[32m     1.17[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 256KiB[0m
+[0m[32m     1.60[0mx faster than [0m[1m[36mBLAKE3-Rust [pseudo] 256KiB[0m
+[0m[32m     1.90[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 256KiB[0m
+[0m[32m     2.30[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 256KiB[0m
+[0m[32m     2.49[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [pseudo] 256KiB[0m
+[0m[32m     2.49[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [pseudo] 256KiB[0m
+[0m[32m     2.56[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 256KiB[0m
+[0m[32m     3.17[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [pseudo] 256KiB[0m
+[0m[32m     3.33[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [pseudo] 256KiB[0m
+[0m[32m     4.03[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [pseudo] 256KiB[0m
+[0m[32m    16.95[0mx faster than [0m[1m[36mSHA-256 [pseudo] 256KiB[0m
+[0m[32m    21.41[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 256KiB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m1MB (pseudo)[0m
+| SHA-256 [pseudo] 1MB                                            | [0m[33m        41.2 ms[0m |          24.3 | ([0m[36m 37.4 ms[0m … [0m[35m 54.5 ms[0m) |[0m[35m  41.8 ms |  54.5 ms |  54.5 ms |[0m
+| BLAKE3-Rust [pseudo] 1MB                                        | [0m[33m         3.7 ms[0m |         271.8 | ([0m[36m  3.6 ms[0m … [0m[35m  5.7 ms[0m) |[0m[35m   3.7 ms |   4.8 ms |   5.7 ms |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 1MB              | [0m[33m        51.2 ms[0m |          19.5 | ([0m[36m 49.1 ms[0m … [0m[35m 69.6 ms[0m) |[0m[35m  50.7 ms |  69.6 ms |  69.6 ms |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 1MB      | [0m[33m         2.7 ms[0m |         370.5 | ([0m[36m  2.6 ms[0m … [0m[35m  4.0 ms[0m) |[0m[35m   2.7 ms |   3.7 ms |   4.0 ms |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 1MB         | [0m[33m         5.1 ms[0m |         197.5 | ([0m[36m  5.0 ms[0m … [0m[35m  5.9 ms[0m) |[0m[35m   5.1 ms |   5.2 ms |   5.9 ms |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 1MB             | [0m[33m         5.8 ms[0m |         171.6 | ([0m[36m  5.5 ms[0m … [0m[35m 12.3 ms[0m) |[0m[35m   5.6 ms |  12.3 ms |  12.3 ms |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 1MB             | [0m[33m         4.2 ms[0m |         235.9 | ([0m[36m  3.9 ms[0m … [0m[35m  6.4 ms[0m) |[0m[35m   4.2 ms |   6.1 ms |   6.4 ms |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 1MB                   | [0m[33m         2.4 ms[0m |         417.3 | ([0m[36m  2.2 ms[0m … [0m[35m  3.8 ms[0m) |[0m[35m   2.4 ms |   3.4 ms |   3.5 ms |[0m
+| BLAKE3-JS-v5 [pseudo] 1MB                                       | [0m[33m         9.8 ms[0m |         102.4 | ([0m[36m  9.1 ms[0m … [0m[35m 19.3 ms[0m) |[0m[35m   9.4 ms |  19.3 ms |  19.3 ms |[0m
+| BLAKE3-JS-v6 [pseudo] 1MB                                       | [0m[33m         7.1 ms[0m |         140.4 | ([0m[36m  7.0 ms[0m … [0m[35m  8.8 ms[0m) |[0m[35m   7.1 ms |   8.8 ms |   8.8 ms |[0m
+| BLAKE3-JS-v7 [pseudo] 1MB                                       | [0m[33m         7.1 ms[0m |         140.3 | ([0m[36m  7.0 ms[0m … [0m[35m  8.0 ms[0m) |[0m[35m   7.2 ms |   8.0 ms |   8.0 ms |[0m
+| BLAKE3-JS-v8 [pseudo] 1MB                                       | [0m[33m         5.8 ms[0m |         172.3 | ([0m[36m  5.7 ms[0m … [0m[35m  7.0 ms[0m) |[0m[35m   5.8 ms |   7.0 ms |   7.0 ms |[0m
+| BLAKE3-JS-v9 [pseudo] 1MB                                       | [0m[33m         6.0 ms[0m |         167.2 | ([0m[36m  5.7 ms[0m … [0m[35m 11.6 ms[0m) |[0m[35m   5.8 ms |  11.6 ms |  11.6 ms |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [pseudo] 1MB[0m
+[0m[32m     1.13[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [pseudo] 1MB[0m
+[0m[32m     1.53[0mx faster than [0m[1m[36mBLAKE3-Rust [pseudo] 1MB[0m
+[0m[32m     1.77[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [pseudo] 1MB[0m
+[0m[32m     2.11[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [pseudo] 1MB[0m
+[0m[32m     2.42[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [pseudo] 1MB[0m
+[0m[32m     2.43[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [pseudo] 1MB[0m
+[0m[32m     2.50[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [pseudo] 1MB[0m
+[0m[32m     2.97[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [pseudo] 1MB[0m
+[0m[32m     2.98[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [pseudo] 1MB[0m
+[0m[32m     4.07[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [pseudo] 1MB[0m
+[0m[32m    17.17[0mx faster than [0m[1m[36mSHA-256 [pseudo] 1MB[0m
+[0m[32m    21.36[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [pseudo] 1MB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m96B (crypto)[0m
+| SHA-256 [crypto] 96B                                            | [0m[33m        12.0 µs[0m |        83,380 | ([0m[36m  8.9 µs[0m … [0m[35m  1.9 ms[0m) |[0m[35m  12.1 µs |  23.2 µs |  27.4 µs |[0m
+| BLAKE3-Rust [crypto] 96B                                        | [0m[33m         2.2 µs[0m |       444,500 | ([0m[36m  1.9 µs[0m … [0m[35m  4.1 µs[0m) |[0m[35m   2.3 µs |   4.1 µs |   4.1 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 96B              | [0m[33m        11.1 µs[0m |        90,090 | ([0m[36m  7.7 µs[0m … [0m[35m  9.4 ms[0m) |[0m[35m  10.3 µs |  19.2 µs |  21.9 µs |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 96B      | [0m[33m         2.0 µs[0m |       506,900 | ([0m[36m  1.7 µs[0m … [0m[35m  2.6 µs[0m) |[0m[35m   2.1 µs |   2.6 µs |   2.6 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 96B         | [0m[33m         4.2 µs[0m |       235,300 | ([0m[36m  3.5 µs[0m … [0m[35m  5.6 µs[0m) |[0m[35m   4.7 µs |   5.6 µs |   5.6 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 96B             | [0m[33m         2.2 µs[0m |       458,900 | ([0m[36m  1.8 µs[0m … [0m[35m  3.7 µs[0m) |[0m[35m   2.4 µs |   3.7 µs |   3.7 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 96B             | [0m[33m        13.3 µs[0m |        74,990 | ([0m[36m  9.7 µs[0m … [0m[35m 11.9 ms[0m) |[0m[35m  13.4 µs |  24.5 µs |  28.9 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 96B                   | [0m[33m         1.9 µs[0m |       519,100 | ([0m[36m  1.7 µs[0m … [0m[35m  2.6 µs[0m) |[0m[35m   2.0 µs |   2.6 µs |   2.6 µs |[0m
+| BLAKE3-JS-v5 [crypto] 96B                                       | [0m[33m         5.3 µs[0m |       188,500 | ([0m[36m  2.6 µs[0m … [0m[35m 44.5 ms[0m) |[0m[35m   3.6 µs |  22.8 µs |  29.5 µs |[0m
+| BLAKE3-JS-v6 [crypto] 96B                                       | [0m[33m         4.0 µs[0m |       248,400 | ([0m[36m  2.6 µs[0m … [0m[35m  8.7 µs[0m) |[0m[35m   7.0 µs |   8.7 µs |   8.7 µs |[0m
+| BLAKE3-JS-v7 [crypto] 96B                                       | [0m[33m         1.1 µs[0m |       921,500 | ([0m[36m  1.0 µs[0m … [0m[35m  1.4 µs[0m) |[0m[35m   1.1 µs |   1.4 µs |   1.4 µs |[0m
+| BLAKE3-JS-v8 [crypto] 96B                                       | [0m[33m         1.0 µs[0m |       960,800 | ([0m[36m  1.0 µs[0m … [0m[35m  1.2 µs[0m) |[0m[35m   1.0 µs |   1.2 µs |   1.2 µs |[0m
+| BLAKE3-JS-v9 [crypto] 96B                                       | [0m[33m         1.0 µs[0m |       976,800 | ([0m[36m  1.0 µs[0m … [0m[35m  1.2 µs[0m) |[0m[35m   1.0 µs |   1.2 µs |   1.2 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-v9 [crypto] 96B[0m
+[0m[32m     1.02[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [crypto] 96B[0m
+[0m[32m     1.06[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [crypto] 96B[0m
+[0m[32m     1.88[0mx faster than [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 96B[0m
+[0m[32m     1.93[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 96B[0m
+[0m[32m     2.13[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 96B[0m
+[0m[32m     2.20[0mx faster than [0m[1m[36mBLAKE3-Rust [crypto] 96B[0m
+[0m[32m     3.93[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [crypto] 96B[0m
+[0m[32m     4.15[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 96B[0m
+[0m[32m     5.18[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [crypto] 96B[0m
+[0m[32m    10.84[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 96B[0m
+[0m[32m    11.72[0mx faster than [0m[1m[36mSHA-256 [crypto] 96B[0m
+[0m[32m    13.03[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 96B[0m
+
+[0m[38;5;245mgroup[0m [0m[32m512B (crypto)[0m
+| SHA-256 [crypto] 512B                                           | [0m[33m        27.5 µs[0m |        36,310 | ([0m[36m 24.6 µs[0m … [0m[35m414.3 µs[0m) |[0m[35m  26.3 µs |  46.5 µs |  51.3 µs |[0m
+| BLAKE3-Rust [crypto] 512B                                       | [0m[33m         3.5 µs[0m |       282,900 | ([0m[36m  3.2 µs[0m … [0m[35m  4.3 µs[0m) |[0m[35m   3.6 µs |   4.3 µs |   4.3 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 512B             | [0m[33m        25.6 µs[0m |        39,060 | ([0m[36m 20.3 µs[0m … [0m[35m 24.7 ms[0m) |[0m[35m  23.5 µs |  45.2 µs |  48.6 µs |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 512B     | [0m[33m         3.7 µs[0m |       267,700 | ([0m[36m  3.6 µs[0m … [0m[35m  4.1 µs[0m) |[0m[35m   3.8 µs |   4.1 µs |   4.1 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 512B        | [0m[33m         5.5 µs[0m |       180,500 | ([0m[36m  4.9 µs[0m … [0m[35m  6.7 µs[0m) |[0m[35m   5.7 µs |   6.7 µs |   6.7 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 512B            | [0m[33m         3.9 µs[0m |       258,100 | ([0m[36m  3.5 µs[0m … [0m[35m  5.3 µs[0m) |[0m[35m   4.0 µs |   5.3 µs |   5.3 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 512B            | [0m[33m        44.3 µs[0m |        22,560 | ([0m[36m 35.7 µs[0m … [0m[35m 13.4 ms[0m) |[0m[35m  42.7 µs |  73.4 µs |  79.6 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 512B                  | [0m[33m         3.9 µs[0m |       253,500 | ([0m[36m  3.7 µs[0m … [0m[35m  5.1 µs[0m) |[0m[35m   4.1 µs |   5.1 µs |   5.1 µs |[0m
+| BLAKE3-JS-v5 [crypto] 512B                                      | [0m[33m         7.7 µs[0m |       130,500 | ([0m[36m  5.9 µs[0m … [0m[35m  9.3 ms[0m) |[0m[35m   6.4 µs |  17.4 µs |  21.2 µs |[0m
+| BLAKE3-JS-v6 [crypto] 512B                                      | [0m[33m         6.6 µs[0m |       152,100 | ([0m[36m  4.9 µs[0m … [0m[35m 36.1 ms[0m) |[0m[35m   5.3 µs |  13.5 µs |  17.3 µs |[0m
+| BLAKE3-JS-v7 [crypto] 512B                                      | [0m[33m         3.6 µs[0m |       280,000 | ([0m[36m  3.5 µs[0m … [0m[35m  3.8 µs[0m) |[0m[35m   3.6 µs |   3.8 µs |   3.8 µs |[0m
+| BLAKE3-JS-v8 [crypto] 512B                                      | [0m[33m         3.1 µs[0m |       327,000 | ([0m[36m  3.0 µs[0m … [0m[35m  3.4 µs[0m) |[0m[35m   3.1 µs |   3.4 µs |   3.4 µs |[0m
+| BLAKE3-JS-v9 [crypto] 512B                                      | [0m[33m         3.0 µs[0m |       330,700 | ([0m[36m  3.0 µs[0m … [0m[35m  3.3 µs[0m) |[0m[35m   3.0 µs |   3.3 µs |   3.3 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-v9 [crypto] 512B[0m
+[0m[32m     1.01[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [crypto] 512B[0m
+[0m[32m     1.17[0mx faster than [0m[1m[36mBLAKE3-Rust [crypto] 512B[0m
+[0m[32m     1.18[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [crypto] 512B[0m
+[0m[32m     1.24[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 512B[0m
+[0m[32m     1.28[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 512B[0m
+[0m[32m     1.30[0mx faster than [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 512B[0m
+[0m[32m     1.83[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 512B[0m
+[0m[32m     2.17[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [crypto] 512B[0m
+[0m[32m     2.53[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [crypto] 512B[0m
+[0m[32m     8.47[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 512B[0m
+[0m[32m     9.11[0mx faster than [0m[1m[36mSHA-256 [crypto] 512B[0m
+[0m[32m    14.66[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 512B[0m
+
+[0m[38;5;245mgroup[0m [0m[32m1KiB (crypto)[0m
+| SHA-256 [crypto] 1KiB                                           | [0m[33m        46.0 µs[0m |        21,720 | ([0m[36m 42.7 µs[0m … [0m[35m457.6 µs[0m) |[0m[35m  44.5 µs |  87.1 µs |  88.2 µs |[0m
+| BLAKE3-Rust [crypto] 1KiB                                       | [0m[33m         4.9 µs[0m |       203,400 | ([0m[36m  4.7 µs[0m … [0m[35m  5.8 µs[0m) |[0m[35m   5.0 µs |   5.8 µs |   5.8 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 1KiB             | [0m[33m        42.9 µs[0m |        23,300 | ([0m[36m 36.9 µs[0m … [0m[35m  8.2 ms[0m) |[0m[35m  40.5 µs |  76.8 µs |  80.0 µs |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 1KiB     | [0m[33m         7.2 µs[0m |       138,600 | ([0m[36m  6.0 µs[0m … [0m[35m327.0 µs[0m) |[0m[35m   6.4 µs |  13.3 µs |  13.8 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 1KiB        | [0m[33m         8.0 µs[0m |       125,600 | ([0m[36m  6.8 µs[0m … [0m[35m582.5 µs[0m) |[0m[35m   7.3 µs |  14.9 µs |  15.4 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 1KiB            | [0m[33m         6.6 µs[0m |       152,000 | ([0m[36m  6.0 µs[0m … [0m[35m 11.0 µs[0m) |[0m[35m   6.4 µs |  11.0 µs |  11.0 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 1KiB            | [0m[33m         4.7 µs[0m |       214,700 | ([0m[36m  4.4 µs[0m … [0m[35m  5.8 µs[0m) |[0m[35m   4.8 µs |   5.8 µs |   5.8 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 1KiB                  | [0m[33m         6.7 µs[0m |       149,500 | ([0m[36m  5.9 µs[0m … [0m[35m 55.0 µs[0m) |[0m[35m   6.6 µs |  12.7 µs |  13.3 µs |[0m
+| BLAKE3-JS-v5 [crypto] 1KiB                                      | [0m[33m        11.9 µs[0m |        84,270 | ([0m[36m 10.0 µs[0m … [0m[35m  1.7 ms[0m) |[0m[35m  10.5 µs |  29.1 µs |  30.4 µs |[0m
+| BLAKE3-JS-v6 [crypto] 1KiB                                      | [0m[33m         9.3 µs[0m |       107,000 | ([0m[36m  8.1 µs[0m … [0m[35m 36.9 ms[0m) |[0m[35m   8.4 µs |  16.8 µs |  19.5 µs |[0m
+| BLAKE3-JS-v7 [crypto] 1KiB                                      | [0m[33m         6.9 µs[0m |       144,400 | ([0m[36m  6.7 µs[0m … [0m[35m253.2 µs[0m) |[0m[35m   6.8 µs |  13.0 µs |  14.0 µs |[0m
+| BLAKE3-JS-v8 [crypto] 1KiB                                      | [0m[33m         5.6 µs[0m |       178,900 | ([0m[36m  5.5 µs[0m … [0m[35m  5.7 µs[0m) |[0m[35m   5.7 µs |   5.7 µs |   5.7 µs |[0m
+| BLAKE3-JS-v9 [crypto] 1KiB                                      | [0m[33m         5.6 µs[0m |       178,500 | ([0m[36m  5.5 µs[0m … [0m[35m  6.0 µs[0m) |[0m[35m   5.6 µs |   6.0 µs |   6.0 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 1KiB[0m
+[0m[32m     1.05[0mx faster than [0m[1m[36mBLAKE3-Rust [crypto] 1KiB[0m
+[0m[32m     1.20[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [crypto] 1KiB[0m
+[0m[32m     1.20[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [crypto] 1KiB[0m
+[0m[32m     1.41[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 1KiB[0m
+[0m[32m     1.44[0mx faster than [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 1KiB[0m
+[0m[32m     1.49[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [crypto] 1KiB[0m
+[0m[32m     1.55[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 1KiB[0m
+[0m[32m     1.71[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 1KiB[0m
+[0m[32m     2.01[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [crypto] 1KiB[0m
+[0m[32m     2.55[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [crypto] 1KiB[0m
+[0m[32m     9.21[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 1KiB[0m
+[0m[32m     9.88[0mx faster than [0m[1m[36mSHA-256 [crypto] 1KiB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m32KiB (crypto)[0m
+| SHA-256 [crypto] 32KiB                                          | [0m[33m         1.2 ms[0m |         825.9 | ([0m[36m  1.2 ms[0m … [0m[35m  2.1 ms[0m) |[0m[35m   1.2 ms |   1.6 ms |   1.9 ms |[0m
+| BLAKE3-Rust [crypto] 32KiB                                      | [0m[33m       115.1 µs[0m |         8,685 | ([0m[36m111.9 µs[0m … [0m[35m232.9 µs[0m) |[0m[35m 112.6 µs | 184.6 µs | 199.3 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 32KiB            | [0m[33m         1.6 ms[0m |         639.0 | ([0m[36m  1.5 ms[0m … [0m[35m  3.3 ms[0m) |[0m[35m   1.5 ms |   2.6 ms |   2.7 ms |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 32KiB    | [0m[33m        96.9 µs[0m |        10,320 | ([0m[36m 91.7 µs[0m … [0m[35m195.7 µs[0m) |[0m[35m  92.4 µs | 169.2 µs | 173.8 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 32KiB       | [0m[33m       160.5 µs[0m |         6,230 | ([0m[36m157.4 µs[0m … [0m[35m277.2 µs[0m) |[0m[35m 158.4 µs | 214.1 µs | 243.4 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 32KiB           | [0m[33m       185.1 µs[0m |         5,402 | ([0m[36m174.2 µs[0m … [0m[35m393.2 µs[0m) |[0m[35m 175.2 µs | 367.7 µs | 371.5 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 32KiB           | [0m[33m       136.7 µs[0m |         7,314 | ([0m[36m119.6 µs[0m … [0m[35m  1.2 ms[0m) |[0m[35m 127.4 µs | 245.6 µs | 255.6 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 32KiB                 | [0m[33m        86.4 µs[0m |        11,570 | ([0m[36m 83.5 µs[0m … [0m[35m488.8 µs[0m) |[0m[35m  84.4 µs | 147.9 µs | 156.3 µs |[0m
+| BLAKE3-JS-v5 [crypto] 32KiB                                     | [0m[33m       294.8 µs[0m |         3,392 | ([0m[36m285.9 µs[0m … [0m[35m  1.0 ms[0m) |[0m[35m 289.0 µs | 486.1 µs | 646.1 µs |[0m
+| BLAKE3-JS-v6 [crypto] 32KiB                                     | [0m[33m       229.6 µs[0m |         4,355 | ([0m[36m219.7 µs[0m … [0m[35m489.8 µs[0m) |[0m[35m 222.0 µs | 437.9 µs | 451.7 µs |[0m
+| BLAKE3-JS-v7 [crypto] 32KiB                                     | [0m[33m       224.9 µs[0m |         4,446 | ([0m[36m218.0 µs[0m … [0m[35m478.7 µs[0m) |[0m[35m 219.1 µs | 408.8 µs | 448.1 µs |[0m
+| BLAKE3-JS-v8 [crypto] 32KiB                                     | [0m[33m       181.0 µs[0m |         5,524 | ([0m[36m176.7 µs[0m … [0m[35m397.0 µs[0m) |[0m[35m 177.2 µs | 288.3 µs | 362.7 µs |[0m
+| BLAKE3-JS-v9 [crypto] 32KiB                                     | [0m[33m       180.4 µs[0m |         5,542 | ([0m[36m176.3 µs[0m … [0m[35m418.8 µs[0m) |[0m[35m 177.1 µs | 310.0 µs | 381.4 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 32KiB[0m
+[0m[32m     1.12[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 32KiB[0m
+[0m[32m     1.33[0mx faster than [0m[1m[36mBLAKE3-Rust [crypto] 32KiB[0m
+[0m[32m     1.58[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 32KiB[0m
+[0m[32m     1.86[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 32KiB[0m
+[0m[32m     2.09[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [crypto] 32KiB[0m
+[0m[32m     2.09[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [crypto] 32KiB[0m
+[0m[32m     2.14[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 32KiB[0m
+[0m[32m     2.60[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [crypto] 32KiB[0m
+[0m[32m     2.66[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [crypto] 32KiB[0m
+[0m[32m     3.41[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [crypto] 32KiB[0m
+[0m[32m    14.01[0mx faster than [0m[1m[36mSHA-256 [crypto] 32KiB[0m
+[0m[32m    18.11[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 32KiB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m64KiB (crypto)[0m
+| SHA-256 [crypto] 64KiB                                          | [0m[33m         2.5 ms[0m |         401.2 | ([0m[36m  2.3 ms[0m … [0m[35m  4.8 ms[0m) |[0m[35m   2.4 ms |   4.1 ms |   4.5 ms |[0m
+| BLAKE3-Rust [crypto] 64KiB                                      | [0m[33m       246.0 µs[0m |         4,065 | ([0m[36m222.6 µs[0m … [0m[35m458.6 µs[0m) |[0m[35m 224.5 µs | 445.9 µs | 452.8 µs |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 64KiB            | [0m[33m         3.3 ms[0m |         302.1 | ([0m[36m  3.0 ms[0m … [0m[35m 16.3 ms[0m) |[0m[35m   3.2 ms |  12.4 ms |  16.3 ms |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 64KiB    | [0m[33m       176.6 µs[0m |         5,664 | ([0m[36m170.9 µs[0m … [0m[35m334.0 µs[0m) |[0m[35m 172.3 µs | 291.2 µs | 300.2 µs |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 64KiB       | [0m[33m       320.5 µs[0m |         3,120 | ([0m[36m312.6 µs[0m … [0m[35m571.9 µs[0m) |[0m[35m 314.6 µs | 419.6 µs | 441.7 µs |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 64KiB           | [0m[33m       358.1 µs[0m |         2,793 | ([0m[36m347.7 µs[0m … [0m[35m741.0 µs[0m) |[0m[35m 350.7 µs | 471.3 µs | 586.1 µs |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 64KiB           | [0m[33m       264.4 µs[0m |         3,783 | ([0m[36m240.4 µs[0m … [0m[35m  1.1 ms[0m) |[0m[35m 251.9 µs | 437.0 µs | 444.0 µs |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 64KiB                 | [0m[33m       157.4 µs[0m |         6,352 | ([0m[36m152.9 µs[0m … [0m[35m287.9 µs[0m) |[0m[35m 154.1 µs | 240.6 µs | 259.0 µs |[0m
+| BLAKE3-JS-v5 [crypto] 64KiB                                     | [0m[33m       588.2 µs[0m |         1,700 | ([0m[36m570.0 µs[0m … [0m[35m  1.0 ms[0m) |[0m[35m 585.0 µs | 744.9 µs | 805.5 µs |[0m
+| BLAKE3-JS-v6 [crypto] 64KiB                                     | [0m[33m       450.5 µs[0m |         2,220 | ([0m[36m438.1 µs[0m … [0m[35m998.2 µs[0m) |[0m[35m 444.2 µs | 585.6 µs | 804.5 µs |[0m
+| BLAKE3-JS-v7 [crypto] 64KiB                                     | [0m[33m       442.1 µs[0m |         2,262 | ([0m[36m436.2 µs[0m … [0m[35m870.3 µs[0m) |[0m[35m 437.8 µs | 557.4 µs | 622.4 µs |[0m
+| BLAKE3-JS-v8 [crypto] 64KiB                                     | [0m[33m       363.7 µs[0m |         2,750 | ([0m[36m353.4 µs[0m … [0m[35m743.3 µs[0m) |[0m[35m 355.3 µs | 487.7 µs | 649.2 µs |[0m
+| BLAKE3-JS-v9 [crypto] 64KiB                                     | [0m[33m       361.1 µs[0m |         2,769 | ([0m[36m352.8 µs[0m … [0m[35m639.8 µs[0m) |[0m[35m 354.6 µs | 485.6 µs | 570.4 µs |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 64KiB[0m
+[0m[32m     1.12[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 64KiB[0m
+[0m[32m     1.56[0mx faster than [0m[1m[36mBLAKE3-Rust [crypto] 64KiB[0m
+[0m[32m     1.68[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 64KiB[0m
+[0m[32m     2.04[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 64KiB[0m
+[0m[32m     2.27[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 64KiB[0m
+[0m[32m     2.29[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [crypto] 64KiB[0m
+[0m[32m     2.31[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [crypto] 64KiB[0m
+[0m[32m     2.81[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [crypto] 64KiB[0m
+[0m[32m     2.86[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [crypto] 64KiB[0m
+[0m[32m     3.74[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [crypto] 64KiB[0m
+[0m[32m    15.83[0mx faster than [0m[1m[36mSHA-256 [crypto] 64KiB[0m
+[0m[32m    21.02[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 64KiB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m256KiB (crypto)[0m
+| SHA-256 [crypto] 256KiB                                         | [0m[33m         9.8 ms[0m |         102.2 | ([0m[36m  9.4 ms[0m … [0m[35m 12.7 ms[0m) |[0m[35m   9.6 ms |  12.7 ms |  12.7 ms |[0m
+| BLAKE3-Rust [crypto] 256KiB                                     | [0m[33m       907.7 µs[0m |         1,102 | ([0m[36m892.0 µs[0m … [0m[35m  1.1 ms[0m) |[0m[35m 906.7 µs |   1.0 ms |   1.0 ms |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 256KiB           | [0m[33m        12.8 ms[0m |          78.4 | ([0m[36m 12.0 ms[0m … [0m[35m 26.3 ms[0m) |[0m[35m  12.6 ms |  26.3 ms |  26.3 ms |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 256KiB   | [0m[33m       668.3 µs[0m |         1,496 | ([0m[36m659.8 µs[0m … [0m[35m  1.2 ms[0m) |[0m[35m 664.4 µs | 766.1 µs |   1.1 ms |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 256KiB      | [0m[33m         1.3 ms[0m |         771.6 | ([0m[36m  1.2 ms[0m … [0m[35m  2.4 ms[0m) |[0m[35m   1.3 ms |   2.2 ms |   2.3 ms |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 256KiB          | [0m[33m         1.4 ms[0m |         699.9 | ([0m[36m  1.4 ms[0m … [0m[35m  2.8 ms[0m) |[0m[35m   1.4 ms |   2.4 ms |   2.8 ms |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 256KiB          | [0m[33m         1.0 ms[0m |         956.6 | ([0m[36m960.8 µs[0m … [0m[35m  2.0 ms[0m) |[0m[35m   1.0 ms |   1.7 ms |   1.8 ms |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 256KiB                | [0m[33m       582.9 µs[0m |         1,715 | ([0m[36m570.9 µs[0m … [0m[35m  1.0 ms[0m) |[0m[35m 578.4 µs | 712.0 µs | 837.7 µs |[0m
+| BLAKE3-JS-v5 [crypto] 256KiB                                    | [0m[33m         2.4 ms[0m |         412.1 | ([0m[36m  2.3 ms[0m … [0m[35m  4.8 ms[0m) |[0m[35m   2.4 ms |   4.3 ms |   4.4 ms |[0m
+| BLAKE3-JS-v6 [crypto] 256KiB                                    | [0m[33m         1.8 ms[0m |         542.2 | ([0m[36m  1.7 ms[0m … [0m[35m  3.7 ms[0m) |[0m[35m   1.8 ms |   3.5 ms |   3.6 ms |[0m
+| BLAKE3-JS-v7 [crypto] 256KiB                                    | [0m[33m         2.0 ms[0m |         490.5 | ([0m[36m  1.7 ms[0m … [0m[35m  3.7 ms[0m) |[0m[35m   1.9 ms |   3.7 ms |   3.7 ms |[0m
+| BLAKE3-JS-v8 [crypto] 256KiB                                    | [0m[33m         1.6 ms[0m |         615.7 | ([0m[36m  1.4 ms[0m … [0m[35m  3.0 ms[0m) |[0m[35m   1.5 ms |   3.0 ms |   3.0 ms |[0m
+| BLAKE3-JS-v9 [crypto] 256KiB                                    | [0m[33m         1.4 ms[0m |         692.6 | ([0m[36m  1.4 ms[0m … [0m[35m  2.1 ms[0m) |[0m[35m   1.4 ms |   1.8 ms |   2.0 ms |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 256KiB[0m
+[0m[32m     1.15[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 256KiB[0m
+[0m[32m     1.56[0mx faster than [0m[1m[36mBLAKE3-Rust [crypto] 256KiB[0m
+[0m[32m     1.79[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 256KiB[0m
+[0m[32m     2.22[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 256KiB[0m
+[0m[32m     2.45[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 256KiB[0m
+[0m[32m     2.48[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [crypto] 256KiB[0m
+[0m[32m     2.79[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [crypto] 256KiB[0m
+[0m[32m     3.16[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [crypto] 256KiB[0m
+[0m[32m     3.50[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [crypto] 256KiB[0m
+[0m[32m     4.16[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [crypto] 256KiB[0m
+[0m[32m    16.79[0mx faster than [0m[1m[36mSHA-256 [crypto] 256KiB[0m
+[0m[32m    21.88[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 256KiB[0m
+
+[0m[38;5;245mgroup[0m [0m[32m1MB (crypto)[0m
+| SHA-256 [crypto] 1MB                                            | [0m[33m        41.5 ms[0m |          24.1 | ([0m[36m 37.7 ms[0m … [0m[35m 55.2 ms[0m) |[0m[35m  41.7 ms |  55.2 ms |  55.2 ms |[0m
+| BLAKE3-Rust [crypto] 1MB                                        | [0m[33m         3.7 ms[0m |         273.9 | ([0m[36m  3.6 ms[0m … [0m[35m  5.3 ms[0m) |[0m[35m   3.7 ms |   4.0 ms |   5.3 ms |[0m
+| BLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 1MB              | [0m[33m        50.2 ms[0m |          19.9 | ([0m[36m 49.1 ms[0m … [0m[35m 52.2 ms[0m) |[0m[35m  50.7 ms |  52.2 ms |  52.2 ms |[0m
+| BLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 1MB      | [0m[33m         2.8 ms[0m |         355.3 | ([0m[36m  2.6 ms[0m … [0m[35m  4.5 ms[0m) |[0m[35m   2.7 ms |   4.5 ms |   4.5 ms |[0m
+| BLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 1MB         | [0m[33m         5.4 ms[0m |         185.8 | ([0m[36m  5.0 ms[0m … [0m[35m 10.1 ms[0m) |[0m[35m   5.1 ms |   9.8 ms |  10.1 ms |[0m
+| BLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 1MB             | [0m[33m         6.2 ms[0m |         161.2 | ([0m[36m  5.6 ms[0m … [0m[35m 12.0 ms[0m) |[0m[35m   5.8 ms |  12.0 ms |  12.0 ms |[0m
+| BLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 1MB             | [0m[33m         4.5 ms[0m |         224.7 | ([0m[36m  3.9 ms[0m … [0m[35m  7.3 ms[0m) |[0m[35m   4.4 ms |   7.3 ms |   7.3 ms |[0m
+| BLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 1MB                   | [0m[33m         2.7 ms[0m |         373.1 | ([0m[36m  2.2 ms[0m … [0m[35m  3.9 ms[0m) |[0m[35m   3.0 ms |   3.9 ms |   3.9 ms |[0m
+| BLAKE3-JS-v5 [crypto] 1MB                                       | [0m[33m        10.7 ms[0m |          93.5 | ([0m[36m  9.2 ms[0m … [0m[35m 14.5 ms[0m) |[0m[35m  11.4 ms |  14.5 ms |  14.5 ms |[0m
+| BLAKE3-JS-v6 [crypto] 1MB                                       | [0m[33m         8.6 ms[0m |         116.4 | ([0m[36m  7.0 ms[0m … [0m[35m 14.2 ms[0m) |[0m[35m   9.7 ms |  14.2 ms |  14.2 ms |[0m
+| BLAKE3-JS-v7 [crypto] 1MB                                       | [0m[33m         7.4 ms[0m |         135.9 | ([0m[36m  7.0 ms[0m … [0m[35m  9.6 ms[0m) |[0m[35m   7.4 ms |   9.6 ms |   9.6 ms |[0m
+| BLAKE3-JS-v8 [crypto] 1MB                                       | [0m[33m         7.9 ms[0m |         126.6 | ([0m[36m  5.7 ms[0m … [0m[35m 13.5 ms[0m) |[0m[35m   9.5 ms |  13.5 ms |  13.5 ms |[0m
+| BLAKE3-JS-v9 [crypto] 1MB                                       | [0m[33m         6.8 ms[0m |         146.4 | ([0m[36m  5.7 ms[0m … [0m[35m 15.6 ms[0m) |[0m[35m   6.7 ms |  15.6 ms |  15.6 ms |[0m
+
+[0m[38;5;245msummary[0m
+  [0m[1m[36mBLAKE3-JS-test-4 @chimmykk/Bk3JS [crypto] 1MB[0m
+[0m[32m     1.05[0mx faster than [0m[1m[36mBLAKE3-TS-test-0 @fleek-network/blake3js-perf [crypto] 1MB[0m
+[0m[32m     1.36[0mx faster than [0m[1m[36mBLAKE3-Rust [crypto] 1MB[0m
+[0m[32m     1.66[0mx faster than [0m[1m[36mBLAKE3-TS-test-3 @Atamanov/blake3-fast [crypto] 1MB[0m
+[0m[32m     2.01[0mx faster than [0m[1m[36mBLAKE3-JS-test-1 @lamb356/blake3-optimized [crypto] 1MB[0m
+[0m[32m     2.31[0mx faster than [0m[1m[36mBLAKE3-TS-test-2 @alrightCha/blake3-js [crypto] 1MB[0m
+[0m[32m     2.55[0mx faster than [0m[1m[36mBLAKE3-JS-v9 [crypto] 1MB[0m
+[0m[32m     2.75[0mx faster than [0m[1m[36mBLAKE3-JS-v7 [crypto] 1MB[0m
+[0m[32m     2.95[0mx faster than [0m[1m[36mBLAKE3-JS-v8 [crypto] 1MB[0m
+[0m[32m     3.21[0mx faster than [0m[1m[36mBLAKE3-JS-v6 [crypto] 1MB[0m
+[0m[32m     3.99[0mx faster than [0m[1m[36mBLAKE3-JS-v5 [crypto] 1MB[0m
+[0m[32m    15.49[0mx faster than [0m[1m[36mSHA-256 [crypto] 1MB[0m
+[0m[32m    18.71[0mx faster than [0m[1m[36mBLAKE3-TS-v00 @paulmillr/noble-hashes [crypto] 1MB[0m
+
