@@ -348,38 +348,6 @@ if (originalHash === receivedHash) {
 
 ## 📊 Benchmarks
 
-### Apple M4 Max (Node.js v22)
-
-| Input Size | Throughput | vs @noble/hashes |
-|------------|------------|------------------|
-| 96 B       | 224 MB/s   | 5× faster        |
-| 512 B      | 426 MB/s   | 7× faster        |
-| 1 KB       | 465 MB/s   | 8× faster        |
-| 32 KB      | **1.20 GB/s** | 24× faster    |
-| 64 KB      | **1.20 GB/s** | 23× faster    |
-| 256 KB     | **1.6 GB/s**  | 26× faster    |
-| 1 MB       | **1.6 GB/s**  | 26× faster    |
-
-### Intel Core i7 2.2 GHz 6-Core (MacBook Pro, 32 GB DDR4)
-
-| Input Size | Throughput | Ops/sec |
-|------------|------------|---------|
-| 1 KB       | 305 MB/s   | 312,516 |
-| 32 KB      | 720 MB/s   | 23,046  |
-| 1 MB       | **845 MB/s** | 845   |
-
-### Apple M4 Pro (macOS)
-
-| Input Size | Throughput |
-|------------|------------|
-| 96 bytes   | ~40 MB/s   |
-| 512 bytes  | ~224 MB/s  |
-| 1 KiB      | ~811 MB/s  |
-| 32 KiB     | ~958 MB/s  |
-| 64 KiB     | ~1000 MB/s |
-| 256 KiB    | ~972 MB/s  |
-| 1 MB       | ~978 MB/s  |
-
 ### Intel Core i3-5005U @ 2.00GHz (Linux x64, Deno 2.5.6)
 
 | Implementation | Time (1 MB) | Throughput | Comparison |
