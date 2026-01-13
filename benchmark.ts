@@ -63,7 +63,8 @@ import { hash as jsBlake3HashV5 } from "./js/v5.js";
 import { hash as jsBlake3HashV6 } from "./js/v6.js";
 import { hash as jsBlake3HashV7 } from "./js/v7.js";
 import { hash as jsBlake3HashV8 } from "./js/v8.js";
-import { hash as jsBlake3HashV9 } from "./js/v9_ru.js";
+import { hash as jsBlake3HashV9 } from "./js/v9.js";
+//import { hash as jsBlake3HashV9t } from "./js/v9_test2.js";
 
 
 // ============================================================================
@@ -300,7 +301,7 @@ for (const suite of testSuites) {
   runBench("BLAKE3-Rust", rustWasmHash, suite.cases);
   
   // BLAKE3 JS v0: наша начальная реализация
-  //runBench("BLAKE3-JS-v0", jsHashV0, suite.cases);
+  runBench("BLAKE3-JS-v0", jsHashV0, suite.cases);
 
   // BLAKE3 TS v00: реализация paulmillr/noble-hashes (Paul Miller) 
   // https://github.com/paulmillr/noble-hashes/blob/main/src/blake3.ts
@@ -309,35 +310,35 @@ for (const suite of testSuites) {
 
   // BLAKE3 JS test 0: реализация fleek-network/blake3js-perf
   // https://github.com/fleek-network/blake3js-perf/blob/main/js/latest.ts
-  runBench("BLAKE3-TS-test-0 @fleek-network/blake3js-perf", jsHashVT0, suite.cases);
+  //runBench("BLAKE3-TS-test-0 @fleek-network/blake3js-perf", jsHashVT0, suite.cases);
 
   // BLAKE3 JS test 1: реализация lamb356/blake3-optimized
   // https://github.com/lamb356/blake3-optimized/blob/main/blake3.js
-  runBench("BLAKE3-JS-test-1 @lamb356/blake3-optimized", jsHashVT1, suite.cases);
+  //runBench("BLAKE3-JS-test-1 @lamb356/blake3-optimized", jsHashVT1, suite.cases);
   
   // BLAKE3 JS test 2: реализация alrightCha/blake3-js
   // https://github.com/alrightCha/blake3-js/blob/main/js/blake3.ts
-  runBench("BLAKE3-TS-test-2 @alrightCha/blake3-js", jsHashVT2, suite.cases);
+  //runBench("BLAKE3-TS-test-2 @alrightCha/blake3-js", jsHashVT2, suite.cases);
   
   // BLAKE3 JS test 3: реализация Atamanov/blake3-fast 
   // https://github.com/Atamanov/blake3-fast/blob/main/src/simd-4-fast.ts
-  runBench("BLAKE3-TS-test-3 @Atamanov/blake3-fast", jsHashVT3, suite.cases);
+  //runBench("BLAKE3-TS-test-3 @Atamanov/blake3-fast", jsHashVT3, suite.cases);
   
   // BLAKE3 JS test 4: реализация chimmykk/Bk3JS
   // https://github.com/chimmykk/Bk3JS/blob/main/blake3.js
-  runBench("BLAKE3-JS-test-4 @chimmykk/Bk3JS", jsHashVT4, suite.cases);
+  //runBench("BLAKE3-JS-test-4 @chimmykk/Bk3JS", jsHashVT4, suite.cases);
   
   // BLAKE3 JS v1: наша реализация
-  //runBench("BLAKE3-JS-v1", jsBlake3HashV1, suite.cases);
+  runBench("BLAKE3-JS-v1", jsBlake3HashV1, suite.cases);
   
   // BLAKE3 JS v2: наша реализация
-  //runBench("BLAKE3-JS-v2", jsBlake3HashV2, suite.cases);
+  runBench("BLAKE3-JS-v2", jsBlake3HashV2, suite.cases);
   
   // BLAKE3 JS v3: наша реализация
-  //runBench("BLAKE3-JS-v3", jsBlake3HashV3, suite.cases);
+  runBench("BLAKE3-JS-v3", jsBlake3HashV3, suite.cases);
   
   // BLAKE3 JS v4: наша реализация
-  //runBench("BLAKE3-JS-v4", jsBlake3HashV4, suite.cases);
+  runBench("BLAKE3-JS-v4", jsBlake3HashV4, suite.cases);
   
   // BLAKE3 JS v5: наша реализация
   runBench("BLAKE3-JS-v5", jsBlake3HashV5, suite.cases);
@@ -353,6 +354,9 @@ for (const suite of testSuites) {
   
   // BLAKE3 JS v9: наша реализация
   runBench("BLAKE3-JS-v9", jsBlake3HashV9, suite.cases);
+  
+  // BLAKE3 JS v9: наша реализация
+  //runBench("BLAKE3-JS-v9t", jsBlake3HashV9t, suite.cases);
   
 }
 

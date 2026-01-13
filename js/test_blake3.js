@@ -7,7 +7,7 @@
  *   deno run test_blake3_v0.js
  */
 
-import { hash, hash as blake3 } from './v9_ru.js';
+import { hash, hash as blake3 } from './v9.js';
 
 import { VECTOR, STRING_VECTORS } from './testvec.js';
 
