@@ -5,7 +5,7 @@
 
 ### Blazingly Fast BLAKE3 for JavaScript
 
-[![npm version](https://img.shields.io/npm/v/blake3-turbo-js.svg?style=flat-square)](https://www.npmjs.com/package/blake3-turbo-js)
+[npm version](https://img.shields.io/npm/v/blake3-turbo-js.svg?style=flat-square)](https://www.npmjs.com/package/blake3-turbo-js)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/blake3-turbo-js?style=flat-square)](https://bundlephobia.com/package/blake3-turbo-js)
 [![license](https://img.shields.io/npm/l/blake3-turbo-js.svg?style=flat-square)](LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=flat-square)](https://www.typescriptlang.org/)
