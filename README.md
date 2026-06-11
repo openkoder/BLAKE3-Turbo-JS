@@ -706,7 +706,7 @@ Contributions welcome! Ideas:
 
 ## 📄 License
 
-MIT © 2024 [pskzcompern](https://github.com/pskzcompern)
+MIT © 2024 [openkoder](https://github.com/openkoder)
 
 ---
 
