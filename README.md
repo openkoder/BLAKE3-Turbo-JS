@@ -56,7 +56,7 @@ u1c9qqs5knwe360w6snjuhcldtpf6tcc9nz6xuanmz2xwyf7l4ufze89tze43yz90ajgcej5ylh0a4h2
 **Zcash Transparent Address:**
 
 ```
-t1UT1TmcpZBoaCRWLC5evpyN97vXnEVVfWW
+t1JtHqzsxVx3faad5MjJg7fk1qyeRh6cPJN
 
 ```
 
